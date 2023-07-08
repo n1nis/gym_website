@@ -4,7 +4,21 @@ import { Stack } from "@mui/material";
 
 import Logo from "../assets/images/Logo.png";
 
+function scrollToBottom() {
+  let scrollOffset = 1800; 
+
+  if (window.innerWidth <= 768) {
+    scrollOffset = 1350; 
+  }
+
+  window.scrollTo({
+    top: window.pageYOffset + scrollOffset,
+    behavior: 'smooth'
+  });
+}
+
 const Navbar = () => {
+
   return (
     <Stack
       direction="row"
@@ -35,8 +49,9 @@ const Navbar = () => {
           Home
         </Link>
         <a
-          href="#exercises"
+          href="#"
           style={{ textDecoration: "none", color: "#3A1212" }}
+          onClick={scrollToBottom}
         >
           Exercises
         </a>
